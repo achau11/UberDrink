@@ -1,35 +1,35 @@
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Login Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles/register.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/login.css" type="text/css" />
   </head>
 
   <body>
-    <div class  = "register-sidebar">
-      <a href = "#"> <img class = 'logo' src = "/images/example_cafe.png"></a>
-      <div class = "side-bar">
-        <p class = "side-bar-title">What goes best with a cup of coffee? Another cup.</p>
-        <img class = "side-bar-icon" src = "/images/Serving-Coffee.jpeg">
+    <div class  = "authentication-sidebar">
+      <a href = "#"> <img class = 'logo' src = "public/images/example_cafe.png"></a>
+      <div class = "break-time">
+        <p class = "break-time-title">Life without coffee is like something without something … sorry, I haven’t had any coffee yet.</p>
+        <img class = "people-icon" src = "https://images.all-free-download.com/images/graphicthumb/break_time_drawing_people_drink_coffee_icon_6835776.jpg">
       </div>
     </div>
     <form action="" method="get" class="entire-form">
-      <h2 class = login-title>Sign up to Example Cafe</h2>
+      <h2 class = login-title>Sign up for Example Cafe</h2>
       <div class="login-form">
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" required>
-      </div>
-      <div class="login-form">
-        <label for="email">Email</label>
+        <label for="email">Enter your email: </label>
         <input type="email" name="email" id="email" required>
       </div>
       <div class="login-form">
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" required>
+        <label for="email">Enter your password: </label>
+        <input type="email" name="email" id="email" required>
       </div>
       <div class="login-form">
-        <input type="submit" class = "input-button" value="Create Account">
+        <input type="submit" class = "input-button" value="Sign Up">
       </div>
-      <p class = "account-signup">Already have an account? Sign in <a href = #> here </a></p>
+      <p class = "account-signup">Already have an account? Login here <a href = '/login'> here </a></p>
     </form>
   </body>
 </html>
