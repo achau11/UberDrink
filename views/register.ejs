@@ -16,7 +16,8 @@
         <img class = "side-bar-icon" src = "/images/Serving-Coffee.jpeg">
       </div>
     </div>
-    <form action="" method="get" class="entire-form">
+
+    <form action="/register" method="POST" class="entire-form">
       <h2 class = login-title>Sign up to Example Cafe</h2>
       <div class="login-form">
         <label for="name">Name</label>
@@ -29,6 +30,11 @@
       <div class="login-form">
         <label for="password">Password</label>
         <input type="password" name="password" id="password" required>
+      </div>
+      <div class="login-form">
+        <label for="phone">Enter your phone number:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"required>
+        <small>Format: 123-456-7890</small>
       </div>
       <div class="login-form">
         <input type="submit" class = "input-button" value="Create Account">
