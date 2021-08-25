@@ -9,6 +9,7 @@ const bodyParser = require("body-parser");
 const sass       = require("node-sass-middleware");
 const app        = express();
 const morgan     = require('morgan');
+const cookieSession = require('cookie-session');
 
 // PG database client/connection setup
 const { Pool } = require('pg');
@@ -29,6 +30,10 @@ app.use("/styles", sass({
   debug: true,
   outputStyle: 'expanded'
 }));
+app.use(cookieSession({
+  name: 'session',
+  keys: ['key1', 'key2'],
+}));
 
 app.use(express.static("public"));
 
@@ -38,6 +43,7 @@ const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
 const loginRoutes = require("./routes/login");
 const registerRoutes = require("./routes/register");
+const logoutRoutes = require("./routes/logout");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -45,14 +51,24 @@ app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 // Note: mount other resources here, using the same pattern above
 // Login page
-app.use("/login", loginRoutes());
+app.use("/login", loginRoutes(db));
 app.use("/register", registerRoutes(db));
+app.use("/logout", logoutRoutes());
 
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 app.get("/", (req, res) => {
-  res.render("index");
+  if (req.session.user_id) {
+    db.query('SELECT * FROM users WHERE id = $1', [req.session.user_id])
+    .then((result) => {
+      const templateVars = {user: result.rows[0]};
+      res.render("index", templateVars);
+    })
+    .catch(err => console.log(err.message));
+  } else {
+    res.render("index", {user: null});
+  }
 });
 
 app.listen(PORT, () => {

@@ -14,6 +14,15 @@
   </head>
 
   <body>
-    <h1>Hello World!</h1>
+    <% if (user) { %>
+      <form method="POST" action="/logout">
+        <div class="form-group mb-2">
+          <label>Logged In As: <%= user.name %></label>
+          <button type="submit" style="background-color:transparent; border-color:darkslategray; color:darkslategray" class="btn btn-primary">Logout</button>
+        </div>
+      </form>
+    <% } else{ %>
+      <h1>Hello World</h1>
+    <% } %>
   </body>
 </html>
