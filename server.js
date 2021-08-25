@@ -45,6 +45,7 @@ const loginRoutes = require("./routes/login");
 const registerRoutes = require("./routes/register");
 const logoutRoutes = require("./routes/logout");
 
+
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
