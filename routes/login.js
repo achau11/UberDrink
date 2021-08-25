@@ -2,21 +2,21 @@
 const express = require('express');
 const router  = express.Router();
 const bodyParser = require('body-parser');
+const { json } = require('body-parser');
 
 module.exports = (db) => {
 
   router.get("/", (req, res) => {
     if (req.session.user_id) {
-      let templateVars = {};
 
       db.query('SELECT * FROM users WHERE id = $1', [req.session.user_id])
       .then((result) => {
-        templateVars = {user: result.rows[0]};
+        const templateVars = {user: result.rows[0]};
         res.render("login", templateVars);
       })
       .catch(err => console.log(err.message));
     } else {
-      res.render("login");
+      res.render("login", {user: null});
     }
   });
 
@@ -35,7 +35,7 @@ module.exports = (db) => {
       res.redirect('/');
     })
     .catch(err => {
-      console.log(err.message);
+      json.send(err.message);
     });
   });
   return router;
