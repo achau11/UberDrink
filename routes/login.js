@@ -3,6 +3,7 @@ const express = require('express');
 const router  = express.Router();
 const bodyParser = require('body-parser');
 const { json } = require('body-parser');
+const bcrypt = require('bcrypt');
 
 module.exports = (db) => {
 
@@ -21,18 +22,16 @@ module.exports = (db) => {
   });
 
   router.post("/", (req, res) => {
-    const query = `
-    SELECT * FROM users
-    WHERE email = $1
-    AND password = $2;
-    `;
-
-    const values = [req.body.email, req.body.password];
-
-    db.query(query, values)
+    db.query(`SELECT * FROM users WHERE email = $1`, [req.body.email])
     .then((result) => {
-      req.session.user_id = result.rows[0].id;
-      res.redirect('/');
+      if(!bcrypt.compareSync(req.body.password, result.rows[0].password)   // Check against hashed passwords and normal passwords from dummy data
+        && req.body.password != result.rows[0].password)
+      {
+        res.send(403, 'Wrong Password');
+      } else {
+        req.session.user_id = result.rows[0].id;
+        res.redirect('/');
+      }
     })
     .catch(err => {
       json.send(err.message);
