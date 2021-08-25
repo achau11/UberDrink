@@ -19,11 +19,20 @@
             <a class="nav-link active" aria-current="page" href="/menu">Menu</a>
           </li>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-light" type="submit">Search</button>
-        </form>
       </div>
+      <% if (user) { %>
+        <form method="POST" action="/logout">
+          <div class="form-group mb-2 mb-lg-0">
+            <label>Logged in: <%= user.email %></label>
+            <button type="submit" style="background-color:transparent; border-color:darkslategray; color:darkslategray" class="btn btn-primary">Logout</button>
+          </div>
+        </form>
+      <% } else{ %>
+        <div class="form-group mb-2">
+          <a class="btn btn-primary" href="/login">Login</a>
+          <a class="btn btn-primary" href="/register">Register</a>
+        </div>
+      <% } %>
     </div>
   </nav>
 </header>

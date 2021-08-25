@@ -8,8 +8,6 @@ const bcrypt = require('bcrypt');
 module.exports = (db) => {
   router.get("/", (req, res) => {
     if (req.session.user_id) {
-      let templateVars = {};
-
       db.query('SELECT * FROM users WHERE id = $1', [req.session.user_id])
       .then((result) => {
         templateVars = {user: result.rows[0]};
@@ -17,7 +15,7 @@ module.exports = (db) => {
       })
       .catch(err => console.log(err.message));
     } else {
-      res.render("register");
+      res.render("register", {user: null});
     }
   });
 
