@@ -22,7 +22,6 @@ module.exports = (db) => {
 
     db.query(query, values)
     .then((result) => {
-      console.log('Registered');
       res.redirect('/login');
     })
     .catch(err => {
