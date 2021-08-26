@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,6 +18,7 @@
 
     <!-- App CSS -->
     <link rel="stylesheet" href="styles/homepage.css">
+<<<<<<< HEAD
     <link rel="stylesheet" href="../public/styles/homepage.css">
 
     <style>
@@ -137,27 +137,13 @@ h3 {
 
     </style>
 
+=======
+>>>>>>> 847fe18b101c213e068aa21d04b92537c8eb8c6e
     <title>Cafe Name</title>
   </head>
   <body>
     <main>
-        <div class="comment-nav">
-
-            <nav id="nav-bar">
-                <span>
-                    <h3 class="logo">
-                        CAFE NAME
-                    </h3>
-                </span>
-                <span class="nav-link">
-                    <a>HOME</a>
-                    <a>MENU</a>
-                    <a>BRANCH</a>
-                    <a>ABOUT US</a>
-                    <button>Login</button>
-                </span>
-            </nav>
-
+      <%- include('partials/_header') %>
             <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                   <div class="carousel-item active" data-bs-interval="10000">
@@ -191,7 +177,7 @@ h3 {
 
             <h2 class="text">OUR BEST MENU</h2>
             <p class="text description">Selected from a perfect ingredients, and made by an<br> experiened chef</p>
-            <a class="menu" href="#">Explore All Menu</a>
+            <a class="btn btn-primary" style="margin-left: 4em;" href="/order">Order Now!</a>
 
               <div id="carouselExampleInterval2" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
@@ -262,49 +248,8 @@ h3 {
 
               </div>
           </span>
-
-          <footer class="footer-info">
-
-              <div class="res-location">
-                  <h3>CAFE NAME</h3>
-                  <h5>Location</h5>
-                  <p>Jl. M.H. Thamrin, Gondangdia,<br>
-                    Kec. Menteng, Kota Jakarta <br>
-                    Pusat, Daeraj Khusus Ibukota<br>
-                    Jakarta 10350<br>
-                    +6281247299753<br>
-                    resto@restaurant.com
-                  </p>
-              </div>
-              <div>
-                <p class="transparent-text">Menu</p>
-                <p>Breakfast<br>
-                  Lunch<br>
-                  Dinner<br>
-                  Vegan<br>
-                  Drink
-                </p>
-            </div>
-            <div>
-                <p class="transparent-text">Branch</p>
-                <p>North Jakarta<br>
-                  Monas<br>
-                  Mall Paigiari<br>
-                  South Jakarta
-                </p>
-            </div>
-            <div>
-                <p class="transparent-text">Branch</p>
-                <p>North Jakarta<br>
-                  Monas<br>
-                  Mall Paigiari<br>
-                  South Jakarta
-                </p>
-            </div>
-          </footer>
+          <%- include('partials/_footer') %>
     </main>
-
-
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
