@@ -9,7 +9,6 @@ app.use(urlencoded({ extended: false }));
 
 app.post('/sms', (req, res) => {
   const twiml = new MessagingResponse();
-  // Access the message body and the number it was sent from.
   console.log(`${req.body.Body}`);
   twiml.message(messageCustomerUpdate("Bob", req.body.Body));
 
