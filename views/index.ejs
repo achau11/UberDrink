@@ -18,38 +18,43 @@
 
     <!-- App CSS -->
     <link rel="stylesheet" href="styles/homepage.css">
+    <link rel="stylesheet" href="styles/login.css">
+
     <title>Cafe Name</title>
   </head>
   <body>
     <main>
       <%- include('partials/_header') %>
-            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item active" data-bs-interval="10000">
-                    <article>
-                        <h2>"They served the best food in <br>Jakarta! gonna visit again"</h2>
-                    </article>
+            <div class="comment-nav">
+
+              <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="10000">
+                      <article>
+                          <h2>"They served the best food in <br>Jakarta! gonna visit again"</h2>
+                      </article>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="12000">
+                      <article>
+                          <h2>"Best cafe I ever went to!<br>Will go again"</h2>
+                      </article>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="15000">
+                      <article>
+                          <h2>"Best cafe I ever went to!<br>Will go again"</h2>
+                      </article>
+                    </div>
                   </div>
-                  <div class="carousel-item" data-bs-interval="12000">
-                    <article>
-                        <h2>"Best cafe I ever went to!<br>Will go again"</h2>
-                    </article>
-                  </div>
-                  <div class="carousel-item" data-bs-interval="15000">
-                    <article>
-                        <h2>"Best cafe I ever went to!<br>Will go again"</h2>
-                    </article>
-                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
+            </div>
         </div>
 
           <span class="section2">

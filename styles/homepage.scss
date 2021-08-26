@@ -8,6 +8,7 @@ main {
   flex-direction: column;
   width: 100%;
   justify-content: center;
+  font-family: 'Playfair Display', serif;
 }
 .logo{
   font-family: 'Cinzel Decorative', cursive;
@@ -35,12 +36,6 @@ main {
   height:300px;
   object-fit: cover;
 }
-
-.img-nav {
-  border-radius: 50%;
-  width: 10%
-}
-
 .footer-info {
   display: flex;
   width: 100%;
@@ -114,4 +109,36 @@ h3 {
 .menu {
   margin-top: 5rem;
   margin-left: 4rem;
+}
+.sidebar_column {
+  background-color: rgb(245, 222, 179);
+}
+
+
+button {
+  width: 25%;
+  height:auto;
+}
+
+.user-input {
+ width: 75%;
+
+}
+
+
+.register{
+  background-color: rgb(245, 222, 179);
+}
+
+@media screen and (min-width: 1600px) {
+  article {
+      height: 1000px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      color: white;
+      margin-left: 40px;
+
+
+  }
 }
