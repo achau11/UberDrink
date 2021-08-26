@@ -46,6 +46,7 @@ const registerRoutes = require("./routes/register");
 const logoutRoutes = require("./routes/logout");
 const orderRoutes = require("./routes/order");
 const twilioRoutes = require("./routes/twilioRoute");
+const statusRoutes = require("./routes/status");
 
 
 // Mount all resource routes
@@ -59,6 +60,7 @@ app.use("/register", registerRoutes(db));
 app.use("/logout", logoutRoutes());
 app.use("/order", orderRoutes(db));
 app.use("/sms", twilioRoutes());
+app.use("/status", statusRoutes(''));
 
 // Home page
 // Warning: avoid creating more routes in this file!
