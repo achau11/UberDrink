@@ -18,7 +18,7 @@
           <% for(const item of items) { %>
             <div class="item ">
                 <p class="shop-item-title"><%= item.name %></p>
-                <img class="img shop-item-image" src="images/burger" alt="">
+                <img class="img shop-item-image" src=<%= item.imgurl %> alt="">
                 <article>
                     <p class="shop-item-price"><%= item.cost %></p>
                     <button class="shop-item-button">ADD TO CART</button>
@@ -45,7 +45,7 @@
 
     </main>
 
-    <script src="../public/scripts/orderpage.js"></script>
+    <script src="scripts/orderpage.js"></script>
 
 </body>
 </html>
