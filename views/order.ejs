@@ -15,42 +15,16 @@
         </div>
 
         <span>
+          <% for(const item of items) { %>
             <div class="item ">
-                <p class="shop-item-title">Food1</p>
-                <img class="img shop-item-image" src="https://images.unsplash.com/photo-1619602715098-1ea02d665224?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="">
+                <p class="shop-item-title"><%= item.name %></p>
+                <img class="img shop-item-image" src="images/burger" alt="">
                 <article>
-                    <p class="shop-item-price">14.99</p>
+                    <p class="shop-item-price"><%= item.cost %></p>
                     <button class="shop-item-button">ADD TO CART</button>
                 </article>
-
             </div>
-            <div class="item">
-                <p class="shop-item-title">Food2</p>
-                <img class="img shop-item-image" src="https://images.unsplash.com/photo-1619602715098-1ea02d665224?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="">
-                <article>
-                    <p class="shop-item-price">9.99</p>
-                    <button class="shop-item-button">ADD TO CART</button>
-                </article>
-
-            </div>
-            <div class="item">
-                <p class="shop-item-title">Food3</p>
-                <img class="img shop-item-image" src="https://images.unsplash.com/photo-1619602715098-1ea02d665224?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="">
-                <article>
-                    <p class="shop-item-price">12.99</p>
-                    <button class="shop-item-button">ADD TO CART</button>
-                </article>
-
-            </div>
-            <div class="item">
-                <p class="shop-item-title">Food4</p>
-                <img class="img shop-item-image" src="https://images.unsplash.com/photo-1619602715098-1ea02d665224?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="">
-                <article>
-                    <p class="shop-item-price">4.99</p>
-                    <button class="shop-item-button">ADD TO CART</button>
-                </article>
-
-            </div>
+          <% } %>
         </span>
         <section class="container content-section">
             <h2 class="section-header">CART</h2>
