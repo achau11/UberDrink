@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,145 +17,11 @@
 
     <!-- App CSS -->
     <link rel="stylesheet" href="styles/homepage.css">
-    <link rel="stylesheet" href="../public/styles/homepage.css">
-
-    <style>
-      body {
-  background-color: #f4c8b0;
-  display: flex;
-  justify-content: center;
-}
-main {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  justify-content: center;
-  font-family: 'Playfair Display', serif;
-}
-.logo{
-  font-family: 'Cinzel Decorative', cursive;
-  color: white;
-  margin-top: 1rem;
-}
-#nav-bar {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.info-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 100%;
-}
-.text-with-description {
-  max-width: 200px;
-}
-.img {
-  width:200px;
-  height:300px;
-  object-fit: cover;
-}
-.footer-info {
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  justify-content: space-around;
-
-
-}
-.res-location {
-  flex-shrink: 3;
-}
-.comment-nav {
-
-  background: linear-gradient( rgba(0, 0, 0, 0.301), rgba(0, 0, 0, 0.301) ), url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1030&q=80');
-  background-size:     cover;                      /* <------ */
-  background-repeat:   no-repeat;
-}
-article {
-  height: 600px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  color: white;
-  margin-left: 40px;
-
-
-}
-.test {
-  display: flex;
-  width: 90%;
-  align-items: center;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-.section2 {
-  background-color: #301e14;
-  background-image: url(http://www.transparenttextures.com/patterns/otis-redding.png);
-/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-  color: white    ;
-}
-.section3 {
-  background-color: #0c1820;
-  background-image: url(http://www.transparenttextures.com/patterns/otis-redding.png);
-/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-  color: white    ;
-}
-footer {
-  background-color: #0c1820;
-  background-image: url(http://www.transparenttextures.com/patterns/otis-redding.png);
-/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-  color: white    ;
-}
-.text {
-  margin-top: 5rem;
-  margin-left: 4rem;
-}
-.description {
-  margin-top: 0px;
-  margin-bottom: 100px;
-}
-.section3 {
-  display: flex;
-
-}
-.transparent-text {
-  margin-top: 5em;
-}
-h3 {
-  margin-top: 3em;
-}
-.menu {
-  margin-top: 5rem;
-  margin-left: 4rem;
-}
-
-    </style>
-
     <title>Cafe Name</title>
   </head>
   <body>
     <main>
-        <div class="comment-nav">
-
-            <nav id="nav-bar">
-                <span>
-                    <h3 class="logo">
-                        CAFE NAME
-                    </h3>
-                </span>
-                <span class="nav-link">
-                    <a>HOME</a>
-                    <a>MENU</a>
-                    <a>BRANCH</a>
-                    <a>ABOUT US</a>
-                    <button>Login</button>
-                </span>
-            </nav>
-
+      <%- include('partials/_header') %>
             <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                   <div class="carousel-item active" data-bs-interval="10000">
@@ -190,7 +55,7 @@ h3 {
 
             <h2 class="text">OUR BEST MENU</h2>
             <p class="text description">Selected from a perfect ingredients, and made by an<br> experiened chef</p>
-            <a class="menu" href="#">Explore All Menu</a>
+            <a class="btn btn-primary" style="margin-left: 4em;" href="/order">Order Now!</a>
 
               <div id="carouselExampleInterval2" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
@@ -261,49 +126,8 @@ h3 {
 
               </div>
           </span>
-
-          <footer class="footer-info">
-
-              <div class="res-location">
-                  <h3>CAFE NAME</h3>
-                  <h5>Location</h5>
-                  <p>Jl. M.H. Thamrin, Gondangdia,<br>
-                    Kec. Menteng, Kota Jakarta <br>
-                    Pusat, Daeraj Khusus Ibukota<br>
-                    Jakarta 10350<br>
-                    +6281247299753<br>
-                    resto@restaurant.com
-                  </p>
-              </div>
-              <div>
-                <p class="transparent-text">Menu</p>
-                <p>Breakfast<br>
-                  Lunch<br>
-                  Dinner<br>
-                  Vegan<br>
-                  Drink
-                </p>
-            </div>
-            <div>
-                <p class="transparent-text">Branch</p>
-                <p>North Jakarta<br>
-                  Monas<br>
-                  Mall Paigiari<br>
-                  South Jakarta
-                </p>
-            </div>
-            <div>
-                <p class="transparent-text">Branch</p>
-                <p>North Jakarta<br>
-                  Monas<br>
-                  Mall Paigiari<br>
-                  South Jakarta
-                </p>
-            </div>
-          </footer>
+          <%- include('partials/_footer') %>
     </main>
-
-
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
