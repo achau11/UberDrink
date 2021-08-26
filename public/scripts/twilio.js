@@ -2,7 +2,7 @@ const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
 require('dotenv').config();
 
-const client = require('twilio')();
+const client = require('twilio')(accountSid, authToken);
 
 const messageRestaurant = (order) => {
   client.messages.create({
@@ -13,11 +13,12 @@ const messageRestaurant = (order) => {
   .then((message) => console.log(message.sid));
 }
 
-const messageCustomerUpdate = (customerName, time) => {
+const messageCustomerUpdate = (customerName, body) => {
+  console.log(body);
   client.messages.create({
     to: process.env.MY_PHONE_NUMBER,
     from: '+14377476201',
-    body: `Hi ${customerName}! Your order will be ready in ${time} mins :)`
+    body: body
   })
   .then((message) => console.log(message.sid));
 

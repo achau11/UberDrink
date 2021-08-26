@@ -1,13 +1,3 @@
-// if (document.readyState == 'loading') {
-//     document.addEventListener('DOMContentLoaded', ready)
-// } else {
-//     ready()
-// }
-
-// const ready = function () {
-// }
-
-
 const removeCartItem = function (event) {
   let buttonClicked = event.target
   buttonClicked.parentElement.parentElement.remove()
@@ -104,3 +94,4 @@ const purchaseClicked = function () {
   }
 }
 document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
+
