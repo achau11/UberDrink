@@ -3,7 +3,7 @@ body {
   background-image: url(http://www.transparenttextures.com/patterns/otis-redding.png);
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
   color: white    ;
-  font-family: 'Playfair Display', serif;
+  font-family: 'montserrat', serif;
 }
 .title {
   display: flex;
@@ -24,6 +24,7 @@ article {
   width:200px;
   height:300px;
   object-fit: cover;
+  border: groove burlywood 5px;
 }
 span {
   display: flex;

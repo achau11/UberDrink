@@ -2,7 +2,7 @@
   <header>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-light border border-bottom-secondary">
     <div class="container-fluid">
-      <a href="#"> <img src = "images/example_cafe.png" class="img-nav navbar-brand circle  d-none d-md-inline"><img> </a>
+      <a href="/"> <img src = "images/example_cafe.png" class="img-nav navbar-brand circle  d-none d-md-inline ms-3"><img> <h6 class = text-left display-6>Coffee 2 Go </h6></a>
       <a class="navbar-brand d-inline float-left d-md-none text-start text-light" href="#">Example Cafe</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -10,13 +10,10 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
+            <a class="nav-link active btn btn-primary me-2" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/order">Order Now!</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/menu">Menu</a>
+            <a class="nav-link active btn btn-primary" aria-current="page" href="/order">Order Now!</a>
           </li>
         </ul>
       </div>
@@ -29,7 +26,7 @@
         </form>
       <% } else{ %>
         <div class="form-group mb-2">
-          <a class="btn btn-primary" href="/login">Login</a>
+          <a class="btn btn-primary me-1" href="/login">Login</a>
           <a class="btn btn-primary" href="/register">Register</a>
         </div>
       <% } %>
