@@ -19,7 +19,7 @@
       <h1>Order Status: </h1>
       <%= console.log(time) %>
       <% if(time){ %>
-        <p><%= `Your order will be ready in ${time} minutes` %></p>
+        <p><div class='confirmed'>><%= `Your order will be ready in ${time} minutes` %></div></p>
       <% } %>
       <% if (time === null) { %>
         <p>Processing</p>
