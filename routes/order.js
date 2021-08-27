@@ -16,7 +16,7 @@ module.exports = (db) => {
           })
           .catch(err => console.log(err.message));
         } else {
-          res.render("order", {user: null, items: items});
+          res.redirect("/login");
         }
       })
       .catch(err => console.log(err.message));

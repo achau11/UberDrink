@@ -18,7 +18,7 @@ module.exports = (db) => {
       })
       .catch(err => console.log(err.message));
     } else {
-      res.render("status", {user: null, time: null});
+      res.redirect("/login");
     }
   });
 
@@ -39,7 +39,7 @@ module.exports = (db) => {
       })
       .catch(err => console.log(err.message));
     } else {
-      res.render("status", {user: null, time: waitTime});
+      res.redirect("/login");
     }
   });
 
