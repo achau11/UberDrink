@@ -12,6 +12,12 @@ body {
   margin-bottom: 5rem;
   margin-top: 5rem;
 }
+
+.img-nav {
+  width:10%;
+  border-radius: 50%;
+}
+
 .item {
   display: flex;
   flex-direction: column;
@@ -20,6 +26,7 @@ body {
 article {
   display: flex;
   justify-content: space-around;
+  margin-top: 2em;
 }
 .img {
   width:200px;
@@ -69,7 +76,10 @@ span {
   color: rgb(255, 254, 254);
   text-align: center;
   font-size: 2.5em;
+  margin-top: 2em;
+  margin-bottom: 1em;
 }
+
 
 .about-band-image {
   float: left;
