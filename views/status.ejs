@@ -14,15 +14,20 @@
   </head>
 
   <body>
-    <h1>Order Status: </h1>
-    <%= console.log(time) %>
-    <% if(time){ %>
-      <p><%= `Your order will be ready in ${time} minutes` %></p>
-    <% } %>
-    <% if (time === null) { %>
-      <p>Processing</p>
-    <% } %>
+    <%- include('partials/_header') %>
+    <div class='order_info'>
+      <h1>Order Status: </h1>
+      <%= console.log(time) %>
+      <% if(time){ %>
+        <p><%= `Your order will be ready in ${time} minutes` %></p>
+      <% } %>
+      <% if (time === null) { %>
+        <p>Processing</p>
+      <% } %>
+      <a class="btn btn-primary me-2" href="/sms">Update Status</a>
+    </div>
 
-    <a class="btn btn-primary me-2" href="/sms">Update Status</a>
+      <%- include('partials/_footer') %>
+
   </body>
 </html>

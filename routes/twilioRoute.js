@@ -5,13 +5,21 @@ const bodyParser = require('body-parser');
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
 const {messageCustomerComplete, messageCustomer, messageRestaurant} = require('../public/scripts/twilio')
 
-module.exports = () => {
+module.exports = (db) => {
   let waitTime = 0;
   router.post('/', (req, res) => {
     const twiml = new MessagingResponse();
     twiml.message(messageRestaurant());
-console.log('route hit');
-    res.render('status', {time: null});
+
+    if (req.session.user_id) {
+      db.query('SELECT * FROM users WHERE id = $1', [req.session.user_id])
+      .then((result) => {
+        res.render("status", {user: result.rows[0], time: null});
+      })
+      .catch(err => console.log(err.message));
+    } else {
+      res.render("status", {user: null, time: null});
+    }
   });
 
   router.post('/received', (req, res) => {
@@ -23,10 +31,16 @@ console.log('route hit');
 
   });
 
-  router.get('/', (rq, res)=> {
-    console.log('get route')
-    console.log('waitTime: ', waitTime);
-    res.render('status', {time: waitTime});
+  router.get('/', (req, res)=> {
+    if (req.session.user_id) {
+      db.query('SELECT * FROM users WHERE id = $1', [req.session.user_id])
+      .then((result) => {
+        res.render("status", {user: result.rows[0], time: waitTime});
+      })
+      .catch(err => console.log(err.message));
+    } else {
+      res.render("status", {user: null, time: waitTime});
+    }
   });
 
   return router;

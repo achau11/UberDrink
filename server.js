@@ -59,7 +59,7 @@ app.use("/login", loginRoutes(db));
 app.use("/register", registerRoutes(db));
 app.use("/logout", logoutRoutes());
 app.use("/order", orderRoutes(db));
-app.use("/sms", twilioRoutes());
+app.use("/sms", twilioRoutes(db));
 app.use("/status", statusRoutes(''));
 
 // Home page
