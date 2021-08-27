@@ -8,7 +8,14 @@ main {
   flex-direction: column;
   width: 100%;
   justify-content: center;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#carouselExampleInterval {
+  h2{
+    background-color: red;
+    opacity: 10;
+  }
 }
 .logo{
   font-family: 'Cinzel Decorative', cursive;
@@ -129,6 +136,7 @@ button {
 .register{
   background-color: rgb(245, 222, 179);
 }
+
 
 @media screen and (min-width: 1600px) {
   article {
