@@ -24,7 +24,7 @@ module.exports = (db) => {
 
   router.post('/received', (req, res) => {
     const twiml = new MessagingResponse();
-    twiml.message(messageCustomer('+13432971071', req.body.Body));
+    twiml.message(messageCustomer(process.env.CUSTOMER_PHONE_NUMBER, req.body.Body));
     console.log('received', req.body.Body);
     waitTime = req.body.Body;
     res.redirect('/');
