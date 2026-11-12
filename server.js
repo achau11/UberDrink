@@ -8,6 +8,9 @@ const express    = require("express");
 const bodyParser = require("body-parser");
 const sass       = require("node-sass-middleware");
 const app        = express();
+if (!process.env.SESSION_SECRET) {
+  throw new Error("SESSION_SECRET must be configured in the environment before starting.");
+}
 const morgan     = require('morgan');
 const cookieSession = require('cookie-session');
 
@@ -32,7 +35,7 @@ app.use("/styles", sass({
 }));
 app.use(cookieSession({
   name: 'session',
-  keys: ['key1', 'key2'],
+  keys: [process.env.SESSION_SECRET],
 }));
 
 app.use(express.static("public"));
